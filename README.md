@@ -4,16 +4,14 @@
 <br />
 <br />
 <br />
-## My values
-😎 쉬운 문제보다 어려운문제<br />
-👌 안전성을 겸비한 속도를 지향 합니다<br />
-🦻 쉽게 말하고 어렵게 들으려고 노력합니다<br />
 <br />
 <br />
 <br /> 
 <br />
 <br />
 <br />
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
 ## Skills 
 #### I use it often.
 <div style="display:flex;gap:30px;flex-wrap:wrap;">
