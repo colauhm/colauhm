@@ -1,17 +1,26 @@
- name: Waka Readme
-
-  on:
-    schedule:
-      # Runs at 12am IST
-      - cron: '30 18 * * *'
-    workflow_dispatch:
-  jobs:
-    update-readme:
-      name: Update Readme with Metrics
-      runs-on: ubuntu-latest
-      steps:
-        - uses: anmol098/waka-readme-stats@master
-          with:
-            WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-            GH_TOKEN: ${{ secrets.GH_TOKEN }}
+name: Update gist with WakaTime stats
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  # Manual triggers with workflow_dispatch
+  workflow_dispatch:
+jobs:
+  update-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Update gist
+        uses: matchai/waka-box@master
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GIST_ID: gist.github.com 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
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
             * 기본적으로 모든 Flag를 보여줍니다. 특정 Flag는 제외하고 싶다면 옵션을 이곳에 직접 작성해야 합니다.
+          LOCALE: "ko" #한국
+          SHOW_LINES_OF_CODE: "True" # or "False"
+          SHOW_PROFILE_VIEWS: "True" # or "False"
+          SHOW_DAYS_OF_WEEK: "True" # or "False"
+          SHOW_SHORT_INFO: "True" # or "False"
+          SHOW_LOC_CHART: "True" # or "False"
+          SHOW_PROJECTS: "True" # or "False"
+          SHOW_LANGUAGE_PER_REPO: "True" # or "False"
